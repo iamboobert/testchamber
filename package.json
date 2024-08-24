@@ -1,0 +1,19 @@
+{
+  "name": "testchamber",
+  "version": "1.0.0",
+  "description": "utilities for testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ./test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git-repo"
+  },
+  "author": "Derek Thompson",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.0"
+  }
+}
