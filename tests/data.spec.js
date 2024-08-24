@@ -10,3 +10,14 @@ test('generateRandomString', async() => {
     expect(str1).not.toEqual(str2)
 })
 
+test('getRandomNumber', async() => {
+    let num1 = data.getRandomNumber(500,1000)
+    let num2 = data.getRandomNumber(500,1000) 
+    
+    expect(num1).toBeGreaterThanOrEqual(500)
+    expect(num1).toBeLessThanOrEqual(1000)
+    expect(num2).toBeGreaterThanOrEqual(500)
+    expect(num2).toBeLessThanOrEqual(1000)
+    expect(num1).not.toEqual(num2)
+})
+
