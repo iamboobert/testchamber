@@ -1,0 +1,9 @@
+{
+    "all": true,
+    "exclude": [
+      "**/*.spec.js",
+      "index.d.ts",
+      "playwright.config.js"
+    ],
+    "lines": 100
+  }
