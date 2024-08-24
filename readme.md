@@ -1,5 +1,6 @@
 <a href="https://www.npmjs.com/package/testchamber"><img src="https://img.shields.io/npm/v/testchamber" /></a>
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/node.js.yml" /></a>
+<a href="https://github.com/iamboobert/testchamber/actions/workflows/npm-publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/npm-publish.yml?label=publish" /></a>
 
 # testchamber
 a set of utilities for testing
@@ -45,7 +46,15 @@ requires playwright: `npx playwright install`
   - `npm link testchamber`
 - run the tests: `npm test`
 
-### npm publish
+### new version in github
+- ensure branch (master) has appropriate version in package.json
+- click 'Releases' 
+- click 'Draft new release'
+- tag with the version number
+- release
+- verify npm publish action worked
+
+### npm publish (manual)
 - version bump in package.json
 - commit bump to master
 - login if needed: `npm login`
