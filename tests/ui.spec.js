@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-const { ui } = require("testchamber")
+import{ ui } from "testchamber"
 
 test('waitForFirst', async ({ page }) => {
     await page.goto('https://testpages.eviltester.com/styled/alerts/fake-alert-test.html')

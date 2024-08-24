@@ -7,16 +7,28 @@ a set of utilities for testing
 ## getting started
 - install, probably as a dev dependency: `npm install testchamber --save-dev`
 - where needed, import as such
-  - just data: `const { data } = require("testchamber")`
-  - ui and data: `const {data, ui} = require("testchamber")`
-  - as different names: `const {data: datatools, ui: uitools} = require("testchamber")`
-- update as needed: `npm update testchamber --save-dev`  
+  - just data: `const { data } = require("testchamber")` or `import { data } from "testchamber"`
+  - ui and data: `const {data, ui} = require("testchamber")` or `import { data, ui } from "testchamber"`
+  - as different names: `const {data: datatools, ui: uitools} = require("testchamber")` or `import { data as datatools, ui as uitools } from "testchamber"`
+  - all as "testchamber":`const testchamber = require("testchamber")` or `import * as testchamber from "testchamber"`
+- update as needed:
+  - `npm update testchamber --save-dev`
+  - `npm install testchamber --save-dev`  
+
+## usage
+best way to see actual usage is to checkout the test specs.
+### ui
+this class contains useful static methods to use for UI browser testing with playwright. it mostly offers helper methods that deal with Page and ElementHandles when using `page.$$()` and friends.
+
+### data
+this class contains useful static methods for dealing with data, such as random number and string generation.
 
 ## maintainence cheat cheet
 
 ### running tests
-requires playwright
-- link local project to the node_modules: `npm link testchamber`
+requires playwright: `npx playwright install`
+- run install: `npm install`
+- link local project to node_modules: `npm link testchamber`
 - run the tests: `npm test`
 
 ### npm publish
