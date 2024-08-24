@@ -1,3 +1,8 @@
+<a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml">
+  <img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/node.js.yml" />
+</a>
+
+
 # testchamber
 a set of utilities for testing
 
