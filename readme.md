@@ -45,6 +45,7 @@ requires playwright: `npx playwright install`
   - `npm link`
   - `npm link testchamber`
 - run the tests: `npm test`
+- run tests with coverage report (requires c8): `npm test-coverage`
 
 ### new version in github
 - ensure branch (master) has appropriate version in package.json
