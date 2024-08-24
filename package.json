@@ -1,11 +1,12 @@
 {
   "name": "testchamber",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "utilities for testing",
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test"
   },
+  "typings": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://github.com/iamboobert/testchamber.git"
