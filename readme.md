@@ -1,8 +1,8 @@
 <a href="https://www.npmjs.com/package/testchamber">
-  <img src="https://img.shields.io/npm/v/testchamber" />
+    <img src="https://img.shields.io/npm/v/testchamber" />
 </a>
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml">
-  <img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/node.js.yml" />
+    <img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/node.js.yml" />
 </a>
 
 # testchamber
@@ -25,5 +25,6 @@ requires playwright
 
 ### npm publish
 - version bump in package.json
+- commit bump to master
 - login if needed: `npm login`
 - publish: `npm publish`
