@@ -4,11 +4,11 @@
   "description": "utilities for testing",
   "main": "index.js",
   "scripts": {
-    "test": "node ./test.js"
+    "test": "npx playwright test"
   },
   "repository": {
     "type": "git",
-    "url": "git-repo"
+    "url": "https://github.com/iamboobert/testchamber.git"
   },
   "author": "Derek Thompson",
   "license": "ISC",
