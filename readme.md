@@ -13,10 +13,10 @@ a set of utilities for testing
 
 ### running tests
 requires playwright
-- link local project to the node_modules: `npm link testchamber`
+- link local project to the node_modules: `npm link testchamber` or `npm run link`
 - run the tests: `npm run test`
 
 ### npm publish
 - version bump in package.json
 - login if needed: `npm login`
-- publish: `npm publish` 
+- publish: `npm publish` or `npm run publish`

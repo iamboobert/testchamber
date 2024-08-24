@@ -1,10 +1,12 @@
 {
   "name": "testchamber",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "utilities for testing",
   "main": "index.js",
   "scripts": {
-    "test": "npx playwright test"
+    "link": "npm link testchamber",
+    "test": "npx playwright test",
+    "publish": "npm publish"
   },
   "repository": {
     "type": "git",
