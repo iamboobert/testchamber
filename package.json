@@ -1,6 +1,6 @@
 {
   "name": "testchamber",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "utilities for testing",
   "main": "index.js",
   "scripts": {
