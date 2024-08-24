@@ -12,7 +12,8 @@ a set of utilities for testing
 
 ### running tests
 requires playwright
-- `npm run test`
+- link test code to the test project: `npm link testchamber`
+- run the tests: `npm run test`
 
 ### npm publish
 - version bump in package.json
