@@ -4,7 +4,7 @@
   "description": "utilities for testing",
   "main": "index.js",
   "scripts": { 
-    "setup": "npx playwright install & npm install && npm link && npm link testchamber",  
+    "setup": "npm install && npx playwright install && npm link && npm link testchamber",  
     "test": "npx c8 --check-coverage npx playwright test",
     "test-nocoverage": "npx playwright test"
   },
