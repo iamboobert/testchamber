@@ -1,6 +1,7 @@
-<a href="https://www.npmjs.com/package/testchamber"><img src="https://img.shields.io/npm/v/testchamber" /></a>
+<a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml"><img src="https://img.shields.io/nycrc/iamboobert/testchamber?label=coverage" /></a>
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/node.js.yml" /></a>
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/npm-publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/npm-publish.yml?label=publish" /></a>
+<a href="https://www.npmjs.com/package/testchamber"><img src="https://img.shields.io/npm/v/testchamber" /></a>
 
 # testchamber
 a set of utilities for testing
@@ -38,14 +39,10 @@ this class contains useful static methods for dealing with data, such as random 
 
 ## maintainence cheat cheet
 
-### running tests
-requires playwright: `npx playwright install`
-- run install: `npm install`
-- link local project to node_modules: 
-  - `npm link`
-  - `npm link testchamber`
+### running tests (manual)
+- run setup: `npm run setup`
 - run the tests: `npm test`
-- run tests with coverage report (requires c8): `npm test-coverage`
+- run the tests without coverage: `npm run test-nocoverage`
 
 ### new version in github
 - ensure branch (master) has appropriate version in package.json
