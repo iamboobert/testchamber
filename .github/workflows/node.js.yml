@@ -26,8 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install 
-    - run: npx playwright install 
-    - run: npm link
-    - run: npm link testchamber
+    - run: npm run setup 
     - run: npm test

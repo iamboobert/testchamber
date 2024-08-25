@@ -15,10 +15,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install 
-      - run: npx playwright install 
-      - run: npm link
-      - run: npm link testchamber
+      - run: npm run setup 
       - run: npm test
 
   publish-npm:
