@@ -37,7 +37,7 @@ this class contains useful static methods to use for UI browser testing with pla
 ### data
 this class contains useful static methods for dealing with data, such as random number and string generation.
 
-## maintainence cheat cheet
+## maintainence cheat sheet
 
 ### running tests (manual)
 - run setup: `npm run setup`
