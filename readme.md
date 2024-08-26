@@ -26,7 +26,7 @@ a set of utilities for testing
     - or 
     - `import * as testchamber from "testchamber"`
 - update as needed:
-  - `npm update testchamber --save-dev`
+  - `npm update testchamber`
   - `npm install testchamber --save-dev`  
 
 ## usage
