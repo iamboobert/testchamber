@@ -21,3 +21,12 @@ test('getRandomNumber', async() => {
     expect(num1).not.toEqual(num2)
 })
 
+test('shuffleArray', async() => {
+    let array1 = ["first", "second", "third", "forth", "fif"]
+    let array2 = [...array1]
+
+    expect(array1).toEqual(array2)
+    data.shuffleArray(array1)    
+    expect(array1).not.toEqual(array2)
+    
+})
