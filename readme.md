@@ -1,7 +1,7 @@
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml"><img src="https://img.shields.io/nycrc/iamboobert/testchamber?label=coverage" /></a>
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/node.js.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/node.js.yml" /></a>
 <a href="https://github.com/iamboobert/testchamber/actions/workflows/npm-publish.yml"><img src="https://img.shields.io/github/actions/workflow/status/iamboobert/testchamber/npm-publish.yml?label=publish" /></a>
-<a href="https://www.npmjs.com/package/testchamber"><img src="https://img.shields.io/npm/v/testchamber" /></a>
+<a href="https://www.npmjs.com/package/testchamber"><img src="https://img.shields.io/npm/v/testchamber?cacheSeconds=1" /></a>
 
 # testchamber
 a set of utilities for testing
@@ -26,7 +26,7 @@ a set of utilities for testing
     - or 
     - `import * as testchamber from "testchamber"`
 - update as needed:
-  - `npm update testchamber --save-dev`
+  - `npm update testchamber`
   - `npm install testchamber --save-dev`  
 
 ## usage
@@ -37,7 +37,7 @@ this class contains useful static methods to use for UI browser testing with pla
 ### data
 this class contains useful static methods for dealing with data, such as random number and string generation.
 
-## maintainence cheat cheet
+## maintainence cheat sheet
 
 ### running tests (manual)
 - run setup: `npm run setup`
