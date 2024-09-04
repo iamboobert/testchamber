@@ -1,7 +1,7 @@
 const { test, expect } = require('@playwright/test');
+const fs = require("fs")
+const path = require("path")
 import { data } from "testchamber"
-import * as path from 'path';
-import * as fs from 'fs'
 
 test('getRandomString', async() => {
     let str1 = data.getRandomString(8)
