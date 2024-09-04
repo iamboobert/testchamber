@@ -1,6 +1,6 @@
 {
   "name": "testchamber",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "utilities for testing",
   "main": "index.js",
   "scripts": {
@@ -18,5 +18,8 @@
   "devDependencies": {
     "@playwright/test": "^1.46.1",
     "@types/node": "^22.5.0"
+  },
+  "dependencies": {
+    "officeparser": "^4.1.1"
   }
 }
