@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 import { data } from "testchamber"
+import * as path from 'path';
+import * as fs from 'fs'
 
 test('getRandomString', async() => {
     let str1 = data.getRandomString(8)
@@ -27,6 +29,57 @@ test('shuffleArray', async() => {
 
     expect(array1).toEqual(array2)
     data.shuffleArray(array1)    
-    expect(array1).not.toEqual(array2)
+    expect(array1).not.toEqual(array2)    
+})
+
+test('asyncRetryLoop', async() => {
+    let staticclass = class {
+        static counter = 0
+    }    
     
+    //success path
+    let actualSuucessResult = await data.asyncRetryLoop(async()=>{
+        staticclass.counter++
+        if(staticclass.counter >= 3) {
+            return true
+        }
+        return false
+    })
+    expect(actualSuucessResult).toBe(true)
+
+    
+    //retries exhausted path
+    //NOTE: expect().toThrow and .toThrowError still seem to result in the error being thrown
+    //hence the verification via t/c block
+    staticclass.counter = 0
+    let errored = false
+    try {
+        await data.asyncRetryLoop(async()=>{
+            staticclass.counter++
+            if(staticclass.counter >= 3) {
+                return true
+            }
+            return false
+        }, {tries: 2})
+    } catch(err) {
+        errored = true
+    }
+    if(!errored) {
+        throw new Error(`did not fail after retries exhausted`)
+    }
+})
+
+test(`hashStream`, async() => {
+    const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
+    const testFileStream = fs.createReadStream(testFilePath)
+    const expectedHash = `272eec4d2a7ebc55b3f1c11cf34affa14ffe82bf`
+    
+    expect(await data.hashStream(testFileStream)).toEqual(expectedHash)
+})
+
+test(`hashFile`, async() => {
+    const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
+    const expectedHash = `272eec4d2a7ebc55b3f1c11cf34affa14ffe82bf`
+    
+    expect(await data.hashFile(testFilePath)).toEqual(expectedHash)
 })

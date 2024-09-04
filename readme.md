@@ -27,7 +27,8 @@ a set of utilities for testing
     - `import * as testchamber from "testchamber"`
 - update as needed:
   - `npm update testchamber`
-  - `npm install testchamber --save-dev`  
+  - `npm install testchamber --save-dev` 
+  - ...and you may also need to blow away node_modules and `npm install` again 
 
 ## usage
 best way to see actual usage is to checkout the test specs.

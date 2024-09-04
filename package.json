@@ -1,10 +1,10 @@
 {
   "name": "testchamber",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "description": "utilities for testing",
   "main": "index.js",
-  "scripts": { 
-    "setup": "npm install && npx playwright install && npm link && npm link testchamber",  
+  "scripts": {
+    "setup": "npm install && npx playwright install && npm link && npm link testchamber",
     "test": "npx c8 --check-coverage npx playwright test",
     "test-nocoverage": "npx playwright test"
   },
