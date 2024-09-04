@@ -38,6 +38,9 @@ this class contains useful static methods to use for UI browser testing with pla
 ### data
 this class contains useful static methods for dealing with data, such as random number and string generation.
 
+### exe
+this class contains execution helpers such as sleep and retry loops
+
 ## maintainence cheat sheet
 
 ### running tests (manual)
