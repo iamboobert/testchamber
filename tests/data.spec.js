@@ -1,5 +1,7 @@
 const { test, expect } = require('@playwright/test');
 import { data } from "testchamber"
+import * as path from 'path';
+import * as fs from 'fs'
 
 test('getRandomString', async() => {
     let str1 = data.getRandomString(8)
@@ -65,4 +67,19 @@ test('asyncRetryLoop', async() => {
     if(!errored) {
         throw new Error(`did not fail after retries exhausted`)
     }
+})
+
+test(`hashStream`, async() => {
+    const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
+    const testFileStream = fs.createReadStream(testFilePath)
+    const expectedHash = `272eec4d2a7ebc55b3f1c11cf34affa14ffe82bf`
+    
+    expect(await data.hashStream(testFileStream)).toEqual(expectedHash)
+})
+
+test(`hashFile`, async() => {
+    const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
+    const expectedHash = `272eec4d2a7ebc55b3f1c11cf34affa14ffe82bf`
+    
+    expect(await data.hashFile(testFilePath)).toEqual(expectedHash)
 })

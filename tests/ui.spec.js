@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-import{ ui } from "testchamber"
+import { ui } from "testchamber"
 
 
 test('waitForFirst', async ({ page }) => {
