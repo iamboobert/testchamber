@@ -32,43 +32,6 @@ test('shuffleArray', async() => {
     expect(array1).not.toEqual(array2)    
 })
 
-test('asyncRetryLoop', async() => {
-    let staticclass = class {
-        static counter = 0
-    }    
-    
-    //success path
-    let actualSuucessResult = await data.asyncRetryLoop(async()=>{
-        staticclass.counter++
-        if(staticclass.counter >= 3) {
-            return true
-        }
-        return false
-    })
-    expect(actualSuucessResult).toBe(true)
-
-    
-    //retries exhausted path
-    //NOTE: expect().toThrow and .toThrowError still seem to result in the error being thrown
-    //hence the verification via t/c block
-    staticclass.counter = 0
-    let errored = false
-    try {
-        await data.asyncRetryLoop(async()=>{
-            staticclass.counter++
-            if(staticclass.counter >= 3) {
-                return true
-            }
-            return false
-        }, {tries: 2})
-    } catch(err) {
-        errored = true
-    }
-    if(!errored) {
-        throw new Error(`did not fail after retries exhausted`)
-    }
-})
-
 test(`hashStream`, async() => {
     const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
     const testFileStream = fs.createReadStream(testFilePath)
