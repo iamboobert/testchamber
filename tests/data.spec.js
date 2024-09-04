@@ -83,3 +83,21 @@ test(`hashFile`, async() => {
     
     expect(await data.hashFile(testFilePath)).toEqual(expectedHash)
 })
+
+test(`streamToBuffer`, async() => {
+    const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
+    const testFileStream = fs.createReadStream(testFilePath)
+    
+    let actualBuffer = await data.streamToBuffer(testFileStream)
+    let expectedBuffer = Buffer.from(`i am a test file MEOW`)
+    expect(actualBuffer).toEqual(expectedBuffer)
+})
+
+test(`documentBufferToString`, async() => {
+    const testFilePath = path.resolve(__dirname, "../resources", "test-word-doc.docx")
+    const testFileStream = fs.createReadStream(testFilePath)
+    const testFileBuffer = await data.streamToBuffer(testFileStream) 
+    
+    let actualText = await data.documentBufferToString(testFileBuffer)
+    expect(actualText).toEqual(`I am a word document huzzah`)
+})
