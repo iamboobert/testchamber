@@ -24,7 +24,7 @@ test('getRandomNumber', async() => {
 })
 
 test('shuffleArray', async() => {
-    let array1 = ["first", "second", "third", "forth", "fif"]
+    let array1 = ["first", "second", "third", "forth", "fif", "six", "seven", "ate", "nin", "10"]
     let array2 = [...array1]
 
     expect(array1).toEqual(array2)
@@ -63,4 +63,12 @@ test(`documentBufferToString`, async() => {
     
     let actualText = await data.documentBufferToString(testFileBuffer)
     expect(actualText).toEqual(`I am a word document huzzah`)
+})
+
+test(`streamToString`, async()=>{
+    const testFilePath = path.resolve(__dirname, "../resources", "testfile.txt")
+    const testFileStream = fs.createReadStream(testFilePath)
+
+    let actualText = await data.streamToString(testFileStream)
+    expect(actualText).toEqual(`i am a test file MEOW`)
 })
