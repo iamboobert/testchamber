@@ -93,3 +93,16 @@ test('clearElementText', async ({ page }) => {
     await ui.clearElementText(page, await page.$(textareaSelector))
     await expect(page.locator(textareaSelector)).toHaveValue("")
 })
+
+
+test('findElementWithChildHavingText',  async ({ page }) => { 
+    await page.goto('https://testpages.eviltester.com/styled/tag/table.html')
+    
+    //normal path
+    let elementFound = await ui.findElementWithChildHavingText(page, '#mytable tbody tr', 'td:nth-child(1)', 'Aleister') 
+    expect(await ui.getTextOfElement(elementFound)).toBe("Aleister\t33.3")  
+    
+    //contains path
+    elementFound = await ui.findElementWithChildHavingText(page, '#mytable tbody tr', 'td:nth-child(1)', 'ster', {contains:true}) 
+    expect(await ui.getTextOfElement(elementFound)).toBe("Aleister\t33.3")  
+})
