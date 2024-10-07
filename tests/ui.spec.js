@@ -106,3 +106,22 @@ test('findElementWithChildHavingText',  async ({ page }) => {
     elementFound = await ui.findElementWithChildHavingText(page, '#mytable tbody tr', 'td:nth-child(1)', 'ster', {contains:true}) 
     expect(await ui.getTextOfElement(elementFound)).toBe("Aleister\t33.3")  
 })
+
+test(`waitForTextInElement`,  async ({ page }) => {  
+    await page.goto('https://testpages.eviltester.com/styled/tag/dynamic-table.html')
+    await page.getByText('Table Data').click()
+    await page.locator('#jsondata').fill(`[{"name" : "derek", "age" : 20}]`)
+    await page.getByRole('button', { name: 'Refresh Table' }).click()
+
+    const element = await page.$("#dynamictable > tr:nth-child(3) > td:nth-child(1)")
+    await ui.waitForTextInElement(page, element, "derek")
+})
+
+test(`waitForText`,  async ({ page }) => {  
+    await page.goto('https://testpages.eviltester.com/styled/tag/dynamic-table.html')
+    await page.getByText('Table Data').click()
+    await page.locator('#jsondata').fill(`[{"name" : "derek", "age" : 20}]`)
+    await page.getByRole('button', { name: 'Refresh Table' }).click()
+
+    await ui.waitForText(page, "#dynamictable td", "derek")
+})
