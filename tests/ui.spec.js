@@ -125,3 +125,19 @@ test(`waitForText`,  async ({ page }) => {
 
     await ui.waitForText(page, "#dynamictable td", "derek")
 })
+
+test(`expectNewTab`, async ({ page }) => {  
+    await page.goto('https://healmatwork.org/about/')
+
+    expect(page.context().pages().length).toBe(1)
+
+    let newPage = await ui.expectNewTab(page, async() => {
+        await page.getByRole('link', { name: 'chronicdisease.org' }).click()
+    })
+
+    expect(page.context().pages().length).toBe(2)
+    expect(page.url()).toEqual("https://healmatwork.org/about/")
+    expect(newPage.url()).toEqual("https://chronicdisease.org/")
+
+    await newPage.close()
+})
